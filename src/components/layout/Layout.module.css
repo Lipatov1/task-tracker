@@ -1,0 +1,36 @@
+.layout {
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #262631;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 28px;
+}
+
+.logoText {
+    font-weight: bold;
+    margin: auto 5px;
+    color: #9383ff;
+}
+
+.content {
+    padding: 30px 15px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #262631;
+}
+
+.footer a {
+    color: #9383ff;
+}

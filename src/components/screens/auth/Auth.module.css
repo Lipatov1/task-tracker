@@ -1,0 +1,25 @@
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+}
+
+.input {
+    background-color: #12121a;
+    border-color: #7f6fd1;
+}
+
+.input input {
+    background-color: inherit;
+}
+
+.button {
+    box-shadow: none;
+}
+
+.buttonDefault {
+    box-shadow: none;
+    background-color: #524789;
+}
