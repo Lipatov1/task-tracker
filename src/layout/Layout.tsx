@@ -1,8 +1,8 @@
 import { ArrowRightOutlined, LoginOutlined } from '@ant-design/icons'
-import { useActions } from '../../hooks/useActions'
+import { useAppSelector } from '../hooks/useAppSelector'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Layout as LayoutAntd, Menu } from 'antd'
-import { useAuth } from '../../hooks/useAuth'
+import { useActions } from '../hooks/useActions'
 import styles from './Layout.module.css'
 import { items } from './menu.data'
 import cn from 'classnames'
@@ -10,7 +10,7 @@ import cn from 'classnames'
 const { Header, Content, Footer } = LayoutAntd
 
 const Layout = () => {
-  const { user } = useAuth()
+  const { user } = useAppSelector((state) => state.user)
   const { logout } = useActions()
 
   return (

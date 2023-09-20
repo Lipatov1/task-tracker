@@ -1,4 +1,4 @@
-import { API_URL, getAuthUrl } from '../../configs/api.config'
+import { getAuthUrl } from '../../configs/api.config'
 import { IAuthResponse } from '../../store/user/user.types'
 import { TOKEN } from '../../api/api.constants'
 import { $axios } from '../../api/api'
@@ -6,7 +6,7 @@ import Cookies from 'js-cookie'
 
 export const AuthService = {
   async register(email: string, password: string) {
-    const response = await $axios.post<IAuthResponse>(`${API_URL}${getAuthUrl('/register')}`, {
+    const response = await $axios.post<IAuthResponse>(getAuthUrl('/register'), {
       email,
       password,
     })
@@ -20,7 +20,7 @@ export const AuthService = {
   },
 
   async login(email: string, password: string) {
-    const response = await $axios.post<IAuthResponse>(`${API_URL}${getAuthUrl('/login')}`, {
+    const response = await $axios.post<IAuthResponse>(getAuthUrl('/login'), {
       email,
       password,
     })

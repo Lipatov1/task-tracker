@@ -1,9 +1,7 @@
-import { useActions } from '../../../hooks/useActions'
 import { Button, Form, Input, Card } from 'antd'
-import { useAuth } from '../../../hooks/useAuth'
-import { IAuthInput } from './auth.types'
 import styles from './Auth.module.css'
-import { FC, useState } from 'react'
+import { useAuth } from './useAuth'
+import { FC } from 'react'
 
 type FieldType = {
   email?: string
@@ -11,27 +9,11 @@ type FieldType = {
 }
 
 const Auth: FC = () => {
-  const { isLoading } = useAuth()
-
-  const [type, setType] = useState<'login' | 'register'>('login')
-
-  const { login, register } = useActions()
-
-  const onFinish = (data: IAuthInput) => {
-    if (type === 'login') {
-      login(data)
-    } else if (type === 'register') {
-      register(data)
-    }
-  }
+  const { onFinish, setType } = useAuth()
 
   return (
     <Card className={styles.card}>
-      <Form
-        layout="vertical"
-        onFinish={onFinish}
-        // onFinishFailed={onFinishFailed}
-      >
+      <Form layout="vertical" onFinish={onFinish}>
         <Form.Item<FieldType>
           label="Email"
           name="email"
