@@ -1,5 +1,4 @@
-import { IUser } from '../../shared/types/user.types'
-import { atob } from 'node:buffer'
+import { IUser } from '@/shared/types/user.types'
 
 export interface IUserState {
   email: string

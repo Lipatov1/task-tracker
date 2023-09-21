@@ -1,4 +1,4 @@
-import { TaskService } from '../../services/task/task.service'
+import { TaskService } from '@/services/task/task.service'
 import { useCallback, useMemo, useState } from 'react'
 import { columns } from './TasksTable/table.data'
 import type { RadioChangeEvent } from 'antd'

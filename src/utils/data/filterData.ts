@@ -1,4 +1,4 @@
-import { ITask } from '../../shared/types/task.types'
+import { ITask } from '@/shared/types/task.types'
 
 export const filterDataByStatus = (dataSource: ITask[] | undefined, status: string) => {
   return dataSource

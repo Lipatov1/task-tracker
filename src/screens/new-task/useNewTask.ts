@@ -1,9 +1,9 @@
-import { useMutation } from 'react-query'
-import { TaskService } from '../../services/task/task.service'
+import { ITaskFormValues } from '@/components/TaskForm/task-form.types'
+import { TaskService } from '@/services/task/task.service'
+import { getTasksUrl } from '@/configs/api.config'
 import { useNavigate } from 'react-router'
-import { getTasksUrl } from '../../configs/api.config'
+import { useMutation } from 'react-query'
 import { useMemo } from 'react'
-import { ITaskFormValues } from '../../components/TaskForm/task-form.types'
 
 export const useNewTask = () => {
   const navigate = useNavigate()

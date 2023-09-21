@@ -1,7 +1,7 @@
-import NewTask from '../screens/new-task/NewTask'
-import Tasks from '../screens/tasks/Tasks'
-import Auth from '../screens/auth/Auth'
-import Task from '../screens/task/Task'
+import NewTask from '@/screens/new-task/NewTask'
+import Tasks from '@/screens/tasks/Tasks'
+import Auth from '@/screens/auth/Auth'
+import Task from '@/screens/task/Task'
 import { ReactNode } from 'react'
 
 export interface IRoute {

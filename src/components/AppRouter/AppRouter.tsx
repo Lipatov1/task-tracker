@@ -1,9 +1,9 @@
-import { useAppSelector } from '../../hooks/useAppSelector'
-import { privateRoutes, publicRoutes } from '../../router'
-import NotFound from '../../screens/not-found/NotFound'
+import { privateRoutes, publicRoutes } from '@/router/index'
+import { useAppSelector } from '@/hooks/useAppSelector'
+import NotFound from '@/screens/not-found/NotFound'
 import { Routes, Route } from 'react-router-dom'
-import Layout from '../../layout/Layout'
 import { Navigate } from 'react-router'
+import Layout from '@/layout/Layout'
 import { FC } from 'react'
 
 const AppRouter: FC = () => {

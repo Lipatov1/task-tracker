@@ -1,5 +1,5 @@
-import { extractDateFromDateTime, extractTimeFromDateTime } from '../../../utils/date/convertDate'
-import { ITask } from '../../../shared/types/task.types'
+import { extractDateFromDateTime, extractTimeFromDateTime } from '@/utils/date/convertDate'
+import { ITask } from '@/shared/types/task.types'
 import type { ColumnsType } from 'antd/es/table'
 import { DataType } from './table.types'
 import { Table } from 'antd'

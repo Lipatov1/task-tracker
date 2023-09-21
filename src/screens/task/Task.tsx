@@ -1,5 +1,5 @@
-import { ITaskFormValues } from '../../components/TaskForm/task-form.types'
-import TaskForm from '../../components/TaskForm/TaskForm'
+import { ITaskFormValues } from '@/components/TaskForm/task-form.types'
+import TaskForm from '@/components/TaskForm/TaskForm'
 import { useTask } from './useTask'
 import { FC } from 'react'
 

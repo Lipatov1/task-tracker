@@ -1,7 +1,7 @@
-import { getAuthUrl } from '../../configs/api.config'
-import { IAuthResponse } from '../../store/user/user.types'
-import { TOKEN } from '../../api/api.constants'
-import { $axios } from '../../api/api'
+import { IAuthResponse } from '@/store/user/user.types'
+import { getAuthUrl } from '@/configs/api.config'
+import { TOKEN } from '@/api/api.constants'
+import { $axios } from '@/api/api'
 import Cookies from 'js-cookie'
 
 export const AuthService = {

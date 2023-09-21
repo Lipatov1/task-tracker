@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import { ITaskFormValues } from '@/components/TaskForm/task-form.types'
+import TaskForm from '@/components/TaskForm/TaskForm'
 import { useNewTask } from './useNewTask'
-import TaskForm from '../../components/TaskForm/TaskForm'
-import { ITaskFormValues } from '../../components/TaskForm/task-form.types'
+import { FC } from 'react'
 
 const NewTask: FC = () => {
   const { isSuccess, error, isLoading, mutate } = useNewTask()

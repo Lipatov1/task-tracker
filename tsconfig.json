@@ -21,7 +21,21 @@
     "jsx": "react-jsx",
     "baseUrl": "./src/",
     "paths": {
-      "@/components/*": ["components/*"]
+      "@/components/*": ["components/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/screens/*": ["screens/*"],
+      "@/router/*": ["router/*"],
+      "@/layout/*": ["layout/*"],
+      "@/shared/*": ["shared/*"],
+      "@/store/*": ["store/*"],
+      "@/configs/*": ["configs/*"],
+      "@/services/*": ["services/*"],
+      "@/ui/*": ["ui/*"],
+      "@/constants/*": ["constants/*"],
+      "@/utils/*": ["utils/*"],
+      "@/api/*": ["api/*"]
+//      "@/components/*": ["components/*"]
+//      "@/components/*": ["components/*"]
     },
   },
   "include": [
