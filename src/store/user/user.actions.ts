@@ -1,5 +1,5 @@
 import { IAuthResponse, InterfaceEmailPassword } from './user.types'
-import { AuthService } from '@/services/auth/auth.service'
+import { AuthService } from '../../services/auth/auth.service'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { AxiosError } from 'axios'
 

@@ -1,10 +1,10 @@
-import { ITaskFormValues } from '@/components/TaskForm/task-form.types'
-import { getTasksUrl, getTaskUrl } from '@/configs/api.config'
-import { ITask } from '@/shared/types/task.types'
-import { $axios } from '@/api/api'
+import { ITaskFormValues } from '../../components/TaskForm/task-form.types'
+import { getTasksUrl, getTaskUrl } from '../../configs/api.config'
+import { ITask } from '../../shared/types/task.types'
+import { $axios } from '../../api/api'
 
 export const TaskService = {
-  async getAll() {
+  getAll: async function () {
     return $axios.get<ITask[]>(getTasksUrl())
   },
 

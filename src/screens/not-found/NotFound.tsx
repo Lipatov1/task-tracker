@@ -1,4 +1,4 @@
-import Error from '@/ui/Error/Error'
+import Error from '../../ui/Error/Error'
 import { FC } from 'react'
 
 const NotFound: FC = () => <Error status="404" text="Страница не найдена" />

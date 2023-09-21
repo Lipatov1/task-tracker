@@ -1,6 +1,6 @@
-import { filterDataByStatus } from '@/utils/data/filterData'
-import ListTasks from '@/components/ListTasks/ListTasks'
-import { ITask } from '@/shared/types/task.types'
+import { filterDataByStatus } from '../../../utils/data/filterData'
+import ListTasks from '../../../components/ListTasks/ListTasks'
+import { ITask } from '../../../shared/types/task.types'
 import styles from './TasksScrum.module.css'
 import { FC } from 'react'
 

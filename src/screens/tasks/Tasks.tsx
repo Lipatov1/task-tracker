@@ -1,14 +1,14 @@
+import { options } from '../../constants/options'
 import { PlusOutlined } from '@ant-design/icons'
 import TasksTable from './TasksTable/TasksTable'
-import { options } from '@/constants/options'
-import Spinner from '@/ui/Spinner/Spinner'
+import TasksScrum from './TasksScrum/TasksScrum'
+import Spinner from '../../ui/Spinner/Spinner'
+import Error from '../../ui/Error/Error'
 import { Link } from 'react-router-dom'
 import styles from './Tasks.module.css'
 import { useTasks } from './useTasks'
 import { Radio, Button } from 'antd'
-import Error from '@/ui/Error/Error'
 import { FC } from 'react'
-import TasksScrum from './TasksScrum/TasksScrum'
 
 const Tasks: FC = () => {
   const { isLoading, data, isError, type, filteredColumns, handleTypeChange } = useTasks()

@@ -1,5 +1,5 @@
+import { ITask } from '../../shared/types/task.types'
 import Paragraph from 'antd/es/typography/Paragraph'
-import { ITask } from '@/shared/types/task.types'
 import Title from 'antd/es/typography/Title'
 import styles from './ListTasks.module.css'
 import { Link } from 'react-router-dom'

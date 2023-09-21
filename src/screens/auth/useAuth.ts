@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { useAppSelector } from '@/hooks/useAppSelector'
-import { useActions } from '@/hooks/useActions'
+import { useAppSelector } from '../../hooks/useAppSelector'
+import { useActions } from '../../hooks/useActions'
 import { useNavigate } from 'react-router'
 import { IAuthInput } from './auth.types'
 
