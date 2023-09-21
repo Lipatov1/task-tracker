@@ -6,6 +6,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState: IUserInitialState = {
   user: getStoreLocal('user'),
   isLoading: false,
+  error: null,
 }
 
 export const userSlice = createSlice({
@@ -21,9 +22,10 @@ export const userSlice = createSlice({
         state.isLoading = false
         state.user = payload.user
       })
-      .addCase(register.rejected, (state) => {
+      .addCase(register.rejected, (state, action) => {
         state.isLoading = false
         state.user = null
+        state.error = action.payload ?? null
       })
       .addCase(login.pending, (state) => {
         state.isLoading = true

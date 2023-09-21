@@ -15,11 +15,12 @@
     background-color: inherit;
 }
 
-.button {
-    box-shadow: none;
+.buttons {
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .buttonDefault {
-    box-shadow: none;
+    margin-left: 20px;
     background-color: #524789;
 }

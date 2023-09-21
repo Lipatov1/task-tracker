@@ -1,8 +1,8 @@
 import type { ColumnsType } from 'antd/es/table'
+import { EyeOutlined } from '@ant-design/icons'
 import { DataType } from './table.types'
 import { Link } from 'react-router-dom'
 import React from 'react'
-import { EditOutlined } from '@ant-design/icons'
 
 export const columns: ColumnsType<DataType> = [
   {
@@ -80,11 +80,11 @@ export const columns: ColumnsType<DataType> = [
     align: 'center',
   },
   {
-    title: 'Action',
+    title: '',
     key: 'action',
     render: (_, record) => (
       <Link to={`/task/edit/${record.key}`}>
-        <EditOutlined />
+        <EyeOutlined />
       </Link>
     ),
   },

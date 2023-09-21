@@ -38,3 +38,7 @@
 .ant-menu-item-disabled {
     cursor: default !important;
 }
+
+.ant-btn-primary {
+    box-shadow: none;
+}

@@ -1,37 +1,44 @@
-import { FC } from 'react'
-import { Radio, Button } from 'antd'
-import type { RadioChangeEvent } from 'antd'
-import { useTasks } from './useTasks'
+import { options } from '../../constants/options'
 import TasksTable from './TasksTable/TasksTable'
-import TasksShortTable from './TasksShortTable/TasksShortTable'
 import { PlusOutlined } from '@ant-design/icons'
+import Spinner from '../../ui/spinner/Spinner'
+import Error from '../../ui/error/Error'
 import { Link } from 'react-router-dom'
-
-const options = [
-  { label: 'Подробно', value: 'full' },
-  { label: 'Кратко', value: 'short' },
-  { label: 'Scrum', value: 'scrum' },
-]
+import styles from './Tasks.module.css'
+import { useTasks } from './useTasks'
+import { Radio, Button } from 'antd'
+import { FC } from 'react'
+import TasksScrum from './TasksScrum/TasksScrum'
 
 const Tasks: FC = () => {
-  const { isLoading, data, isError, type, setType } = useTasks()
+  const { isLoading, data, isError, type, filteredColumns, handleTypeChange } = useTasks()
 
-  const onChange1 = ({ target: { value } }: RadioChangeEvent) => {
-    setType(value)
+  if (isLoading) {
+    return <Spinner />
+  }
+
+  if (isError) {
+    return <Error text="Ошибка загрузки данных" />
   }
 
   return (
     <>
-      <Button icon={<PlusOutlined />}>
-        <Link to="/task/create">Создать</Link>
-      </Button>
-      <Radio.Group options={options} onChange={onChange1} optionType="button" />
-      {type === 'full' ? (
-        <TasksTable tasks={data} />
-      ) : type === 'short' ? (
-        <TasksShortTable tasks={data} />
+      <div className={styles.actions}>
+        <Button icon={<PlusOutlined />}>
+          <Link to="/task/create">Создать</Link>
+        </Button>
+        <Radio.Group
+          value={type}
+          options={options}
+          onChange={handleTypeChange}
+          optionType="button"
+        />
+      </div>
+
+      {type === 'scrum' ? (
+        <TasksScrum dataSource={data} />
       ) : (
-        <TasksTable tasks={data} />
+        <TasksTable tasks={data} columns={filteredColumns} />
       )}
     </>
   )

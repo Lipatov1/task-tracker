@@ -10,7 +10,7 @@ const TaskForm: FC<ITaskForm> = ({ initialValues, onFinish }) => {
   }, [form, initialValues])
 
   return (
-    <Form form={form} initialValues={initialValues} onFinish={onFinish}>
+    <Form layout="vertical" form={form} initialValues={initialValues} onFinish={onFinish}>
       <Form.Item
         label="Название"
         name="name"
@@ -24,7 +24,7 @@ const TaskForm: FC<ITaskForm> = ({ initialValues, onFinish }) => {
         name="description"
         rules={[{ required: true, message: 'Пожалуйста введите пароль' }]}
       >
-        <Input />
+        <Input.TextArea />
       </Form.Item>
 
       <Form.Item

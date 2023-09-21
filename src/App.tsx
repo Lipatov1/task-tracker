@@ -12,6 +12,7 @@ import Layout from './layout/Layout'
 import 'antd/dist/reset.css'
 import { FC } from 'react'
 import './App.css'
+import NotFound from './screens/not-found/NotFound'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -43,6 +44,7 @@ const App: FC = () => {
             <Route path="tasks" element={<PrivateRoute element={<Tasks />} />} />
             <Route path="task/edit/:id" element={<PrivateRoute element={<Task />} />} />
             <Route path="task/create" element={<PrivateRoute element={<NewTask />} />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </QueryClientProvider>

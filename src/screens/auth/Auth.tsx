@@ -30,7 +30,7 @@ const Auth: FC = () => {
           <Input.Password className={styles.input} />
         </Form.Item>
 
-        <Form.Item>
+        <Form.Item className={styles.buttons}>
           <Button
             type="primary"
             htmlType="submit"

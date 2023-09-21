@@ -1,0 +1,11 @@
+.columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: stretch;
+    gap: 20px;
+}
+
+.columns div {
+    flex-grow: 1;
+}

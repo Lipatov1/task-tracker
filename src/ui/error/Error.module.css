@@ -1,0 +1,44 @@
+.box {
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    width: 100%;
+    position: absolute;
+    gap: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.status,
+.text {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.status {
+    font-size: 120px;
+    color: #9383ff;
+}
+
+.text {
+    font-size: 60px;
+    text-align: center;
+}
+
+.link {
+    margin-top: 10px;
+    font-size: 20px;
+    transition: all .3s ease;
+    color: inherit;
+}
+
+.link span {
+    color: #9383ff;
+}
+
+.link span:hover {
+    opacity: .7;
+    text-decoration: underline;
+}
