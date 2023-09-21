@@ -4,7 +4,6 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { useActions } from '../../hooks/useActions'
 import { Menu as MenuAntd } from 'antd'
 import styles from './Menu.module.css'
-import cn from 'classnames'
 import { FC } from 'react'
 
 const Menu: FC = () => {
@@ -13,7 +12,7 @@ const Menu: FC = () => {
   const location = useLocation()
 
   return (
-    <div className={cn(styles.menu, 'container')}>
+    <div className={`${styles.menu} container`}>
       <MenuAntd selectedKeys={[location.pathname]} className={styles.listMenu} mode="horizontal">
         <MenuAntd.Item disabled>
           <div className={styles.logo}>

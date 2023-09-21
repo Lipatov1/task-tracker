@@ -4,7 +4,7 @@ import { useNewTask } from './useNewTask'
 import { FC } from 'react'
 
 const NewTask: FC = () => {
-  const { isSuccess, error, isLoading, mutate } = useNewTask()
+  const { mutate } = useNewTask()
 
   const onFinish = (data: ITaskFormValues) => {
     mutate(data)

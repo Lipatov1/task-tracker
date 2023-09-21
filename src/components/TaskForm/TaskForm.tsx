@@ -1,9 +1,18 @@
 import { Button, DatePicker, Form, Input, Select, TimePicker } from 'antd'
+import { TaskService } from '../../services/task/task.service'
+import { getTasksUrl } from '../../configs/api.config'
 import { ITaskForm } from './task-form.types'
+import { useNavigate } from 'react-router'
 import { FC, useEffect } from 'react'
 
 const TaskForm: FC<ITaskForm> = ({ initialValues, onFinish }) => {
+  const navigate = useNavigate()
   const [form] = Form.useForm()
+
+  const onDeleteHandler = () => {
+    TaskService.delete(`${initialValues?.id}`)
+    navigate(getTasksUrl())
+  }
 
   useEffect(() => {
     form.setFieldsValue(initialValues)
@@ -14,7 +23,7 @@ const TaskForm: FC<ITaskForm> = ({ initialValues, onFinish }) => {
       <Form.Item
         label="Название"
         name="name"
-        rules={[{ required: true, message: 'Пожалуйста введите Email' }]}
+        rules={[{ required: true, message: 'Пожалуйста введите название' }]}
       >
         <Input />
       </Form.Item>
@@ -22,7 +31,7 @@ const TaskForm: FC<ITaskForm> = ({ initialValues, onFinish }) => {
       <Form.Item
         label="Описание"
         name="description"
-        rules={[{ required: true, message: 'Пожалуйста введите пароль' }]}
+        rules={[{ required: true, message: 'Пожалуйста введите описание' }]}
       >
         <Input.TextArea />
       </Form.Item>
@@ -75,6 +84,11 @@ const TaskForm: FC<ITaskForm> = ({ initialValues, onFinish }) => {
         <Button type="primary" htmlType="submit">
           Сохранить
         </Button>
+        {initialValues && (
+          <Button danger onClick={onDeleteHandler} style={{ marginLeft: 15 }}>
+            Удалить
+          </Button>
+        )}
       </Form.Item>
     </Form>
   )

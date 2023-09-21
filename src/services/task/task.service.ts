@@ -19,4 +19,8 @@ export const TaskService = {
   async update(id: string, data: ITaskFormValues) {
     return $axios.put<string>(getTaskUrl(id), data)
   },
+
+  async delete(id: string) {
+    return $axios.delete<string>(getTaskUrl(id))
+  },
 }

@@ -8,7 +8,7 @@ import { useMemo } from 'react'
 export const useNewTask = () => {
   const navigate = useNavigate()
 
-  const { isSuccess, error, isLoading, mutate } = useMutation(
+  const { mutate } = useMutation(
     ['create task'],
     (data: ITaskFormValues) => TaskService.create(data),
     {
@@ -20,11 +20,8 @@ export const useNewTask = () => {
 
   return useMemo(
     () => ({
-      isSuccess,
-      error,
-      isLoading,
       mutate,
     }),
-    [isSuccess, error, isLoading, mutate]
+    [mutate]
   )
 }

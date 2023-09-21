@@ -20,7 +20,7 @@ const TasksTable: FC<ITasksTable> = ({ tasks, columns }) => {
       priority: task.priority,
       date: extractDateFromDateTime(task.date),
       plannedTime: extractTimeFromDateTime(task.plannedTime),
-      elapsedTime: extractTimeFromDateTime(task.elapsedTime),
+      elapsedTime: task.elapsedTime ? extractTimeFromDateTime(task.elapsedTime) : '',
     })
   )
 

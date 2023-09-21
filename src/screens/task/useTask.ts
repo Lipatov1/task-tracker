@@ -32,7 +32,7 @@ export const useTask = () => {
     ...task,
     date: dayjs(task.date),
     plannedTime: dayjs(task.plannedTime),
-    elapsedTime: dayjs(task.elapsedTime),
+    elapsedTime: task.elapsedTime ? dayjs(task.elapsedTime) : undefined,
   }
 
   return { isLoading, refactorTask, mutate }
