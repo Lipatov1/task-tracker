@@ -2,7 +2,6 @@ import type { ColumnsType } from 'antd/es/table'
 import { EyeOutlined } from '@ant-design/icons'
 import { DataType } from './table.types'
 import { Link } from 'react-router-dom'
-import React from 'react'
 
 export const columns: ColumnsType<DataType> = [
   {
@@ -10,12 +9,14 @@ export const columns: ColumnsType<DataType> = [
     dataIndex: 'name',
     key: 'name',
     align: 'center',
+    ellipsis: true,
   },
   {
     title: 'Описание',
     dataIndex: 'description',
     key: 'description',
     align: 'center',
+    ellipsis: true,
   },
   {
     title: 'Статус',
@@ -80,7 +81,6 @@ export const columns: ColumnsType<DataType> = [
     align: 'center',
   },
   {
-    title: '',
     key: 'action',
     render: (_, record) => (
       <Link to={`/task/edit/${record.key}`}>

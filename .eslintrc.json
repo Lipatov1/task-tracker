@@ -14,7 +14,9 @@
         "plugin:jest/recommended",
         "plugin:prettier/recommended",
         "plugin:import/recommended",
-        "prettier"
+        "prettier",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -23,9 +25,10 @@
         },
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.json",
+        "tsconfigRootDir": "./"
     },
-    "plugins": [ "react", "@typescript-eslint", "jest" ],
+    "plugins": [ "react", "@typescript-eslint", "jest", "import" ],
     "rules": {
         "no-alert": "warn",
         "no-console": "warn",
@@ -67,6 +70,9 @@
         "linkComponents": [
             "Hyperlink",
             {"name": "Link", "linkAttribute": "to"}
-        ]
+        ],
+        "import/resolver": {
+            "typescript": {}
+        }
     }
 }

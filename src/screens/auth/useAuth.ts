@@ -1,14 +1,14 @@
-import { useAppSelector } from '../../hooks/useAppSelector'
-import { useNavigate } from 'react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useAppSelector } from '../../hooks/useAppSelector'
 import { useActions } from '../../hooks/useActions'
+import { useNavigate } from 'react-router'
 import { IAuthInput } from './auth.types'
 
 export const useAuth = () => {
-  const { user, isLoading } = useAppSelector((state) => state.user)
+  const { user, isLoading, error } = useAppSelector((state) => state.user)
   const { login, register } = useActions()
   const navigate = useNavigate()
-  const [type, setType] = useState<'login' | 'register'>('login')
+  const [type, setType] = useState('login')
 
   const onFinish = useCallback(
     (data: IAuthInput) => {
@@ -32,7 +32,8 @@ export const useAuth = () => {
       isLoading,
       setType,
       onFinish,
+      error,
     }),
-    [isLoading, setType, onFinish]
+    [isLoading, setType, onFinish, error]
   )
 }

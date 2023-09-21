@@ -34,9 +34,10 @@ export const userSlice = createSlice({
         state.isLoading = false
         state.user = payload.user
       })
-      .addCase(login.rejected, (state) => {
+      .addCase(login.rejected, (state, action) => {
         state.isLoading = false
         state.user = null
+        state.error = action.payload ?? null
       })
       .addCase(logout.fulfilled, (state) => {
         state.isLoading = false

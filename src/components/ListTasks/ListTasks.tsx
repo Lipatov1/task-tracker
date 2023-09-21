@@ -1,10 +1,10 @@
-import { IDataSource } from './list-tasks.types'
 import styles from './ListTasks.module.css'
 import { Link } from 'react-router-dom'
 import { Card, List } from 'antd'
 import { FC } from 'react'
 import { ITask } from '../../shared/types/task.types'
 import Title from 'antd/es/typography/Title'
+import Paragraph from 'antd/es/typography/Paragraph'
 
 interface IList {
   dataSource?: ITask[]
@@ -12,25 +12,33 @@ interface IList {
 }
 
 const ListTasks: FC<IList> = ({ dataSource, title }) => (
-  <div className={styles.column}>
+  <div>
     <Title className={styles.title} level={3}>
       {title}
     </Title>
     <List
+      grid={{
+        gutter: 16,
+        xs: 1,
+        sm: 1,
+        md: 1,
+        lg: 1,
+        xl: 1,
+        xxl: 1,
+      }}
       pagination={{
         pageSize: 15,
         align: 'center',
         showSizeChanger: false,
+        hideOnSinglePage: true,
       }}
       dataSource={dataSource}
       renderItem={(item) => (
-        <List.Item className={styles.link}>
+        <List.Item>
           <Link to={`/task/edit/${item.id}`}>
-            {/*<Card className={styles.card} type="inner" hoverable>*/}
-            {/*  /!*<Card.Meta title={item.name} description={item.description} />*!/*/}
-            {/*</Card>*/}
             <Card className={styles.card} type="inner" hoverable title={item.name}>
-              {item.description}
+              <Paragraph>Приоритет: {item.priority}</Paragraph>
+              <Paragraph>{item.description}</Paragraph>
             </Card>
           </Link>
         </List.Item>

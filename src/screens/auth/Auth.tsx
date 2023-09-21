@@ -1,20 +1,15 @@
-import { Button, Form, Input, Card } from 'antd'
+import { Button, Form, Input, Card, Typography } from 'antd'
 import styles from './Auth.module.css'
 import { useAuth } from './useAuth'
 import { FC } from 'react'
 
-type FieldType = {
-  email?: string
-  password?: string
-}
-
 const Auth: FC = () => {
-  const { onFinish, setType } = useAuth()
+  const { onFinish, setType, isLoading, error } = useAuth()
 
   return (
     <Card className={styles.card}>
-      <Form layout="vertical" onFinish={onFinish}>
-        <Form.Item<FieldType>
+      <Form disabled={isLoading} layout="vertical" onFinish={onFinish}>
+        <Form.Item
           label="Email"
           name="email"
           rules={[{ required: true, message: 'Пожалуйста введите Email' }]}
@@ -22,7 +17,7 @@ const Auth: FC = () => {
           <Input className={styles.input} />
         </Form.Item>
 
-        <Form.Item<FieldType>
+        <Form.Item
           label="Пароль"
           name="password"
           rules={[{ required: true, message: 'Пожалуйста введите пароль' }]}
@@ -30,22 +25,14 @@ const Auth: FC = () => {
           <Input.Password className={styles.input} />
         </Form.Item>
 
+        {error && <Typography.Text type="danger">{error}</Typography.Text>}
+
         <Form.Item className={styles.buttons}>
-          <Button
-            type="primary"
-            htmlType="submit"
-            onClick={() => setType('login')}
-            className={styles.button}
-          >
+          <Button type="primary" htmlType="submit" onClick={() => setType('login')}>
             Войти
           </Button>
 
-          <Button
-            type="primary"
-            htmlType="submit"
-            onClick={() => setType('register')}
-            className={styles.buttonDefault}
-          >
+          <Button className={styles.button} htmlType="submit" onClick={() => setType('register')}>
             Зарегистрироваться
           </Button>
         </Form.Item>

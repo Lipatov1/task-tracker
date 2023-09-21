@@ -1,8 +1,8 @@
 import { options } from '../../constants/options'
 import TasksTable from './TasksTable/TasksTable'
 import { PlusOutlined } from '@ant-design/icons'
-import Spinner from '../../ui/spinner/Spinner'
-import Error from '../../ui/error/Error'
+import Spinner from '../../ui/Spinner/Spinner'
+import Error from '../../ui/Error/Error'
 import { Link } from 'react-router-dom'
 import styles from './Tasks.module.css'
 import { useTasks } from './useTasks'
@@ -36,7 +36,7 @@ const Tasks: FC = () => {
       </div>
 
       {type === 'scrum' ? (
-        <TasksScrum dataSource={data} />
+        <TasksScrum data={data} />
       ) : (
         <TasksTable tasks={data} columns={filteredColumns} />
       )}

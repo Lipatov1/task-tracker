@@ -42,3 +42,8 @@
 .ant-btn-primary {
     box-shadow: none;
 }
+
+.ant-dropdown-menu-item-selected,
+.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+    background-color: #919095 !important;
+}

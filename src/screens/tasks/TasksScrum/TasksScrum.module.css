@@ -1,11 +1,5 @@
 .columns {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-}
-
-.columns div {
-    flex-grow: 1;
 }

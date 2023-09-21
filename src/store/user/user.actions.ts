@@ -13,24 +13,29 @@ export const register = createAsyncThunk<
     return response.data
   } catch (error) {
     if (error instanceof AxiosError) {
-      const message = error.response?.data as string
+      const message = error.response?.data.message as string
       return thunkAPI.rejectWithValue(message)
     }
     return thunkAPI.rejectWithValue(null)
   }
 })
 
-export const login = createAsyncThunk<IAuthResponse, InterfaceEmailPassword>(
-  'auth/login',
-  async ({ email, password }, thunkAPI) => {
-    try {
-      const response = await AuthService.login(email, password)
-      return response.data
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error)
+export const login = createAsyncThunk<
+  IAuthResponse,
+  InterfaceEmailPassword,
+  { rejectValue: string | null }
+>('auth/login', async ({ email, password }, thunkAPI) => {
+  try {
+    const response = await AuthService.login(email, password)
+    return response.data
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      const message = error.response?.data.message as string
+      return thunkAPI.rejectWithValue(message)
     }
+    return thunkAPI.rejectWithValue(null)
   }
-)
+})
 
 export const logout = createAsyncThunk('auth/logout', async () => {
   await AuthService.logout()

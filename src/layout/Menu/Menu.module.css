@@ -1,0 +1,25 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.listMenu {
+    min-width: 300px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logoImage {
+    height: 28px;
+}
+
+.logoText {
+    font-size: 18px;
+    font-weight: bold;
+    margin: auto 7px;
+    color: #9383ff;
+}

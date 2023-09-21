@@ -1,10 +1,9 @@
-import { FC } from 'react'
-import { Table } from 'antd'
-// import { columns } from './table.data'
-import { ITask } from '../../../shared/types/task.types'
-import { DataType } from './table.types'
 import { extractDateFromDateTime, extractTimeFromDateTime } from '../../../utils/date/convertDate'
+import { ITask } from '../../../shared/types/task.types'
 import type { ColumnsType } from 'antd/es/table'
+import { DataType } from './table.types'
+import { Table } from 'antd'
+import { FC } from 'react'
 
 interface ITasksTable {
   tasks: ITask[] | undefined
@@ -32,6 +31,7 @@ const TasksTable: FC<ITasksTable> = ({ tasks, columns }) => {
       pagination={{
         position: ['bottomCenter'],
         showSizeChanger: false,
+        hideOnSinglePage: true,
       }}
       scroll={{ x: true }}
     />
