@@ -1,4 +1,4 @@
-import { ITask } from '../../shared/types/task.types'
+import { ITask } from '../../../shared/types/task.types'
 import Paragraph from 'antd/es/typography/Paragraph'
 import Title from 'antd/es/typography/Title'
 import styles from './ListTasks.module.css'

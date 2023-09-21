@@ -5,6 +5,7 @@ import { useActions } from '../../hooks/useActions'
 import { Menu as MenuAntd } from 'antd'
 import styles from './Menu.module.css'
 import { FC } from 'react'
+import clsx from 'clsx'
 
 const Menu: FC = () => {
   const { user } = useAppSelector((state) => state.user)
@@ -12,7 +13,7 @@ const Menu: FC = () => {
   const location = useLocation()
 
   return (
-    <div className={`${styles.menu} container`}>
+    <div className={clsx(styles.menu, 'container')}>
       <MenuAntd selectedKeys={[location.pathname]} className={styles.listMenu} mode="horizontal">
         <MenuAntd.Item disabled>
           <div className={styles.logo}>

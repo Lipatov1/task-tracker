@@ -2,7 +2,7 @@ import { ITaskFormValues } from '../../components/TaskForm/task-form.types'
 import TaskForm from '../../components/TaskForm/TaskForm'
 import { useTask } from './useTask'
 import { FC } from 'react'
-import Spinner from '../../ui/Spinner/Spinner'
+import Spinner from '../../components/Spinner/Spinner'
 
 const Task: FC = () => {
   const { isLoading, refactorTask, mutate } = useTask()

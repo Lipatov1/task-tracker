@@ -1,4 +1,4 @@
-import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import PrivateRoute from './router/PrivateRoute/PrivateRoute'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import NotFound from './screens/not-found/NotFound'
 import NewTask from './screens/new-task/NewTask'
@@ -14,13 +14,7 @@ import 'antd/dist/reset.css'
 import { FC } from 'react'
 import './App.css'
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-    },
-  },
-})
+const queryClient = new QueryClient()
 
 const App: FC = () => {
   return (
